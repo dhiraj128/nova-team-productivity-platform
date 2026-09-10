@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#0b1326;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "error-container": "#93000a", "inverse-on-surface": "#283044", "on-primary-fixed": "#07006c", "outline": "#908fa0", "surface-variant": "#2d3449", "inverse-surface": "#dae2fd", "on-secondary-fixed": "#001f26", "on-surface": "#dae2fd", "on-secondary-container": "#00424e", "on-tertiary-fixed-variant": "#005236", "on-tertiary-fixed": "#002113", "primary-fixed-dim": "#c0c1ff", "on-primary": "#1000a9", "secondary-fixed-dim": "#4cd7f6", "tertiary-fixed": "#6ffbbe", "surface-container-low": "#131b2e", "on-error": "#690005", "on-tertiary-container": "#000703", "on-secondary-fixed-variant": "#004e5c", "tertiary-fixed-dim": "#4edea3", "surface": "#0b1326", "surface-tint": "#c0c1ff", "on-secondary": "#003640", "on-primary-container": "#0d0096", "error": "#ffb4ab", "surface-container-highest": "#2d3449", "primary-container": "#8083ff", "secondary-fixed": "#acedff", "background": "#0b1326", "surface-container": "#171f33", "surface-container-lowest": "#060e20", "surface-dim": "#0b1326", "outline-variant": "#464554", "on-primary-fixed-variant": "#2f2ebe", "on-background": "#dae2fd", "secondary-container": "#03b5d3", "primary-fixed": "#e1e0ff", "secondary": "#4cd7f6", "inverse-primary": "#494bd6", "tertiary-container": "#00885d", "tertiary": "#4edea3", "on-surface-variant": "#c7c4d7", "surface-bright": "#31394d", "primary": "#c0c1ff", "on-tertiary": "#003824", "surface-container-high": "#222a3d", "on-error-container": "#ffdad6" }, borderRadius: { DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem" }, spacing: { "space-lg": "1.5rem", "space-xs": "0.25rem", "gutter-desktop": "1.5rem", "space-base": "1rem", "sidebar-collapsed-width": "3.5rem", "space-2xs": "0.125rem", "space-sm": "0.5rem", "kanban-col-width": "18rem", "space-md": "0.75rem", "sidebar-width": "15rem", "space-xl": "2rem", "gutter-mobile": "1rem", "space-2xl": "3rem" }, fontFamily: { "headline-md": ["Geist"], "headline-sm": ["Geist"], "label-caps": ["JetBrains Mono"], "body-sm": ["Geist"], "headline-lg-mobile": ["Geist"], "body-lg": ["Geist"], "label-code": ["JetBrains Mono"], "headline-lg": ["Geist"], "body-md": ["Geist"], "display-hero": ["Geist"] }, fontSize: { "headline-md": ["22px", { lineHeight: "28px", letterSpacing: "-0.02em", fontWeight: "600" }], "headline-sm": ["16px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "600" }], "label-caps": ["10px", { lineHeight: "14px", letterSpacing: "0.06em", fontWeight: "600" }], "body-sm": ["12px", { lineHeight: "18px", letterSpacing: "0em", fontWeight: "400" }], "headline-lg-mobile": ["24px", { lineHeight: "32px", letterSpacing: "-0.02em", fontWeight: "600" }], "body-lg": ["15px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "400" }], "label-code": ["12px", { lineHeight: "16px", letterSpacing: "-0.01em", fontWeight: "500" }], "headline-lg": ["30px", { lineHeight: "38px", letterSpacing: "-0.025em", fontWeight: "600" }], "body-md": ["13px", { lineHeight: "20px", letterSpacing: "-0.005em", fontWeight: "400" }], "display-hero": ["40px", { lineHeight: "48px", letterSpacing: "-0.03em", fontWeight: "600" }] } } } }</script></head><body class="bg-surface text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Go back" class="min-w-[44px] min-h-[44px] flex items-center justify-center -ml-2 text-on-surface hover:text-primary transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[20px]">arrow_back</span></button><img alt="NOVA Geometric Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WCJLkGyJofkzYD2CaS2vF54Ev4AWVHNSELk_uJTtVlpCeziwG7r-Uzv0Aw6O867xDO4FXCa8hrkT7aUMIJ-pTgsbcmjBAyXPpqirgYvn7UsAx_yw_bJZ7pYDgIq3gLhvNNKWghqYCYq3L97CrIHcTWMaELEeJwVmQNIp95mdNdoGP67VI6kVsZPgEY7TMkAVdrR7-0bV5agQ46OLcLCWXt7hDBwOIXmaNae-T0T8b_kOcOBchg4JDSUusf"/><h1 class="font-headline-sm text-headline-sm text-on-surface truncate font-semibold ml-1">Task Detail</h1></div><div class="flex items-center gap-space-xs"><button aria-label="Search" class="min-w-[44px] min-h-[44px] flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">search</span></button><div class="flex items-center justify-center pl-1"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0iRXzv10MO3JR7wW6rDxypqHvQWbVlIFuMRgjYHtQEBqzaVgOjN0BMLN4tfkSStOmZ8637odOMYeTtvF-36Cw6LDIfuXRxLwqvchvIrX8c5k2XEl5T8-f4G2KBRxpEQsvNZFxnCte_bQH0nP9hFPprjfP5m56CSqzTu0kqnfb6yii-okol00k1-a8Dtl29Eprw1WEJ0xYiSFvK8F8ywaRkEKe436ITLRWLZSBnGB2FtWLaNg2sP0BBw"/></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full pb-10">
+<!-- Top Scrim / Drawer Handle Representation -->
+<div class="w-full flex flex-col items-center pt-2 pb-3">
+<div class="w-12 h-1 rounded-full bg-surface-variant"></div>
+</div>
+<!-- Modal Container Card -->
+<div class="flex flex-col w-full px-gutter-mobile gap-space-lg">
+<!-- Header & Action Row -->
+<div class="flex flex-col gap-space-sm bg-surface-container-low rounded-xl p-space-base shadow-xl">
+<!-- Breadcrumb & Top Actions -->
+<div class="flex items-center justify-between gap-space-xs text-on-surface-variant">
+<div class="flex items-center gap-space-2xs overflow-hidden">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-primary truncate">NOVA Website</span>
+<span class="text-outline-variant font-label-caps">/</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant truncate">Tasks</span>
+<span class="text-outline-variant font-label-caps">/</span>
+<span class="font-label-code text-label-code text-secondary font-medium shrink-0">NOV-104</span>
+</div>
+<div class="flex items-center gap-space-2xs shrink-0">
+<button aria-label="Favorite task" class="w-8 h-8 rounded-lg flex items-center justify-center bg-surface-container hover:bg-surface-variant text-on-surface-variant transition-colors" id="star-btn" onclick="toggleStar()">
+<span class="material-symbols-outlined text-[18px]" id="star-icon">star</span>
+</button>
+<button aria-label="More actions" class="w-8 h-8 rounded-lg flex items-center justify-center bg-surface-container hover:bg-surface-variant text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+<button aria-label="Close drawer" class="w-8 h-8 rounded-lg flex items-center justify-center bg-surface-variant text-on-surface hover:bg-surface-bright transition-colors" onclick="window.history.back()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- Task Title -->
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-semibold tracking-tight leading-snug">
+        Design landing page hero & interactive mockups
+      </h2>
+<!-- Primary Action CTA -->
+<div class="flex items-center gap-space-sm pt-space-xs">
+<button class="flex-1 py-2 px-3 rounded-lg bg-primary text-on-primary font-headline-sm text-headline-sm flex items-center justify-center gap-space-xs shadow-md transition-all active:scale-[0.98]" id="complete-btn" onclick="toggleComplete()">
+<span class="material-symbols-outlined text-[18px]" id="complete-icon">check_circle</span>
+<span id="complete-text">Mark Complete</span>
+</button>
+<button class="px-3 py-2 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm flex items-center gap-space-2xs transition-colors">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span>Edit</span>
+</button>
+</div>
+</div>
+<!-- Metadata Section Grid -->
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Status Box -->
+<div class="p-space-base rounded-xl bg-surface-container flex flex-col justify-between gap-space-xs shadow-sm">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-outline">Status</span>
+<div class="relative">
+<button class="w-full flex items-center justify-between py-1.5 px-2 rounded-lg bg-surface-variant text-secondary text-left" id="status-dropdown-btn" onclick="toggleDropdown()">
+<div class="flex items-center gap-space-2xs truncate">
+<span class="w-2 h-2 rounded-full bg-secondary shrink-0 animate-pulse"></span>
+<span class="font-label-code text-label-code font-semibold truncate" id="current-status">In Progress</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant shrink-0">expand_more</span>
+</button>
+<div class="hidden absolute left-0 right-0 top-full mt-1 bg-surface-container-high rounded-lg shadow-xl p-1 z-20 flex-col gap-1" id="status-menu">
+<button class="w-full text-left px-2 py-1.5 rounded text-on-surface-variant font-label-code text-label-code flex items-center gap-2 hover:bg-surface-variant" onclick="selectStatus('Todo', 'outline')">
+<span class="w-2 h-2 rounded-full bg-outline"></span> Todo
+            </button>
+<button class="w-full text-left px-2 py-1.5 rounded text-secondary font-label-code text-label-code flex items-center gap-2 hover:bg-surface-variant" onclick="selectStatus('In Progress', 'secondary')">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> In Progress
+            </button>
+<button class="w-full text-left px-2 py-1.5 rounded text-tertiary font-label-code text-label-code flex items-center gap-2 hover:bg-surface-variant" onclick="selectStatus('Under Review', 'tertiary')">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> Under Review
+            </button>
+<button class="w-full text-left px-2 py-1.5 rounded text-primary font-label-code text-label-code flex items-center gap-2 hover:bg-surface-variant" onclick="selectStatus('Completed', 'primary')">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Completed
+            </button>
+</div>
+</div>
+</div>
+<!-- Priority Box -->
+<div class="p-space-base rounded-xl bg-surface-container flex flex-col justify-between gap-space-xs shadow-sm">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-outline">Priority</span>
+<div class="flex items-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-label-code text-label-code font-medium">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+            Urgent
+          </span>
+</div>
+</div>
+<!-- Assignee Box -->
+<div class="p-space-base rounded-xl bg-surface-container flex flex-col gap-space-xs shadow-sm">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-outline">Assignee</span>
+<div class="flex items-center gap-space-xs">
+<div class="relative shrink-0">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="Close up professional portrait of Priya Singh smiling warmly with modern studio lighting in front of soft dark slate background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMGDMmxNQanaFVSm24YmVWGzf0_1-RJY1aQr0AkiaAHhafn7oc21Xlb_QFgZy_f7ktZ-kUtvFTnhXKm-MmkdyhG7kiFeEe6bnyq-SOus-2CWdcFjjL1Ev13oZdx0_GZyqZl1x6aAm0dceRIh-kPlNzqevEUl_fEmKpgyJD0vQaoh93rfaaH3F_rw9qppmRcb0DmHCwLjJgsc0z84IosG4nG60nQeyT6w_740RX6EZsuncWSLro_Mb4BA"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-tertiary rounded-full"></span>
+</div>
+<div class="min-w-0 flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface font-medium truncate">Priya Singh</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant truncate">Product Designer</span>
+</div>
+</div>
+</div>
+<!-- Reporter Box -->
+<div class="p-space-base rounded-xl bg-surface-container flex flex-col gap-space-xs shadow-sm">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-outline">Reporter</span>
+<div class="flex items-center gap-space-xs">
+<img class="w-8 h-8 rounded-full object-cover shrink-0" data-alt="Portrait photo of Dheeraj Kumar wearing glasses and tech apparel against an ambient dark indigo office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB406aeb-f7hdE_mTn02k6BVeW2wu7cWSV-Agbr-tOyjveZP6ExPAn9fYJi8I8n2jupivv5t1h-0OaOLw6z39CDjQfCaH8FCE4ZQA7ABu0hYh3Zfa7qT3Vymr-0y9-SV_b72XgExT_xI3r8-BbOemd9wtezctnub0KKhQGT2HWkAJPv4-6r5ThmyKSA6Kc8b2v6ofo9Q4nMZDpPGey1QV0mma2zIX8OlIyBsWV_Hj-Vaanp0UcWy0pjew"/>
+<div class="min-w-0 flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface font-medium truncate">Dheeraj Kumar</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant truncate">Design Lead</span>
+</div>
+</div>
+</div>
+<!-- Due Date -->
+<div class="p-space-base rounded-xl bg-surface-container flex flex-col justify-between gap-space-xs shadow-sm">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-outline">Due Date</span>
+<div class="flex items-center gap-1.5 text-error">
+<span class="material-symbols-outlined text-[16px]">calendar_clock</span>
+<span class="font-body-sm text-body-sm font-semibold truncate">Tomorrow, Nov 12</span>
+</div>
+</div>
+<!-- Project Box -->
+<div class="p-space-base rounded-xl bg-surface-container flex flex-col justify-between gap-space-xs shadow-sm">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-outline">Project</span>
+<div class="flex items-center gap-1.5 text-on-surface truncate">
+<span class="material-symbols-outlined text-[16px] text-primary">folder_open</span>
+<span class="font-body-sm text-body-sm font-medium truncate">Website Redesign</span>
+</div>
+</div>
+</div>
+<!-- Section 1: Description -->
+<div class="flex flex-col gap-space-xs bg-surface-container-low rounded-xl p-space-base shadow-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[18px] text-primary">notes</span>
+          Description
+        </h3>
+<span class="font-label-caps text-label-caps text-outline uppercase">Markdown</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed pt-1">
+        Create high-fidelity dark-mode hero graphics, interactive workflow mockups, and micro-interactions for the NOVA SaaS launch page. Must align with design tokens.
+      </p>
+</div>
+<!-- Section 2: Subtasks -->
+<div class="flex flex-col gap-space-sm bg-surface-container-low rounded-xl p-space-base shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[18px] text-tertiary">checklist</span>
+            Subtasks
+          </h3>
+<span class="font-label-code text-label-code px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant" id="subtask-counter">2/4 completed</span>
+</div>
+<!-- Mini Progress Bar -->
+<div class="w-16 h-1.5 rounded-full bg-surface-variant overflow-hidden">
+<div class="h-full bg-tertiary transition-all duration-300" id="subtask-progress" style="width: 50%;"></div>
+</div>
+</div>
+<!-- Checklist Items -->
+<div class="flex flex-col gap-space-xs pt-space-xs" id="subtask-list">
+<label class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container transition-colors cursor-pointer select-none">
+<input checked="" class="subtask-checkbox w-4 h-4 rounded bg-surface-variant text-primary accent-primary cursor-pointer" onchange="updateProgress()" type="checkbox"/>
+<span class="font-body-md text-body-md text-outline line-through flex-1 min-w-0">Create vector logo and typography scale</span>
+<span class="material-symbols-outlined text-[14px] text-tertiary">verified</span>
+</label>
+<label class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container transition-colors cursor-pointer select-none">
+<input checked="" class="subtask-checkbox w-4 h-4 rounded bg-surface-variant text-primary accent-primary cursor-pointer" onchange="updateProgress()" type="checkbox"/>
+<span class="font-body-md text-body-md text-outline line-through flex-1 min-w-0">Design hero card preview with realistic data</span>
+<span class="material-symbols-outlined text-[14px] text-tertiary">verified</span>
+</label>
+<label class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container transition-colors cursor-pointer select-none">
+<input class="subtask-checkbox w-4 h-4 rounded bg-surface-variant text-primary accent-primary cursor-pointer" onchange="updateProgress()" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface flex-1 min-w-0">Build interactive tab animations</span>
+</label>
+<label class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container transition-colors cursor-pointer select-none">
+<input class="subtask-checkbox w-4 h-4 rounded bg-surface-variant text-primary accent-primary cursor-pointer" onchange="updateProgress()" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface flex-1 min-w-0">Mobile responsive breakpoint specs</span>
+</label>
+</div>
+<!-- Add Subtask Inline Form -->
+<div class="flex items-center gap-space-xs pt-1">
+<div class="flex-1 flex items-center bg-surface-container rounded-lg px-2.5 py-1.5">
+<span class="material-symbols-outlined text-[16px] text-outline mr-2">add</span>
+<input class="w-full bg-transparent text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none" id="new-subtask-input" onkeydown="if(event.key==='Enter') addSubtask()" placeholder="Add a new subtask..." type="text"/>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-variant text-on-surface hover:bg-surface-bright font-label-code text-label-code font-semibold transition-colors" onclick="addSubtask()">
+          Add
+        </button>
+</div>
+</div>
+<!-- Section 3: Attachments -->
+<div class="flex flex-col gap-space-sm bg-surface-container-low rounded-xl p-space-base shadow-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[18px] text-secondary">attachment</span>
+          Attachments
+          <span class="font-label-code text-label-code text-on-surface-variant font-normal">(2)</span>
+</h3>
+<button class="font-label-code text-label-code text-primary flex items-center gap-1 hover:underline">
+<span class="material-symbols-outlined text-[14px]">cloud_upload</span> Upload
+        </button>
+</div>
+<!-- Attachment Cards -->
+<div class="flex flex-col gap-space-xs">
+<!-- Item 1: PNG Preview -->
+<div class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container hover:bg-surface-variant transition-colors">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0 overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="High fidelity dark UI landing page hero concept preview thumbnail with luminous indigo glow buttons and typography sample" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp01ridGendRABeTpdDOlUY2rfV9gdC0TXeQhpslpXH7Mk7JUI4ytscDuewCBy0xsIVZtm_rgLjp-5RC7R_4pFL2ryC5o6_fwe-cQZT3a8B5yRgGLJLti44ck9rqpDXJLGFac_JSPfjdW1cL2feEkKWmILbl6VNXdOLr4GL0wPT9VIT7-fg8LOMxa9bFCuNjV_CGkHqg3SJsI-tv7uY_h1pY-itY5NW1JWKEs4275Z3s3O8PQSra0ybg"/>
+</div>
+<div class="min-w-0 flex-1 flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium truncate">hero-preview-v2.png</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">2.4 MB • PNG Image</span>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="Download attachment" class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button aria-label="Open attachment preview" class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- Item 2: Code File -->
+<div class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container hover:bg-surface-variant transition-colors">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center shrink-0 text-secondary">
+<span class="material-symbols-outlined text-[24px]">data_object</span>
+</div>
+<div class="min-w-0 flex-1 flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium truncate">typography-tokens.json</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">18 KB • JSON Config</span>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="Download attachment" class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 4: Comments & Collaboration -->
+<div class="flex flex-col gap-space-md bg-surface-container-low rounded-xl p-space-base shadow-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[18px] text-tertiary">chat_bubble</span>
+          Activity & Comments
+        </h3>
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Live sync</span>
+</div>
+<!-- Comment Timeline -->
+<div class="flex flex-col gap-space-base" id="comments-container">
+<!-- Comment 1: Dheeraj -->
+<div class="flex items-start gap-space-sm">
+<img class="w-8 h-8 rounded-full object-cover shrink-0 mt-0.5" data-alt="Headshot of Dheeraj Kumar team lead wearing minimal dark apparel looking forward" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD17iGoMJIKYgBp7J30WyxkfX1LX-sZjkS0SL_Clfy-fNlph7hRsa9Spgx6XpY2GoE_fx73Jgm7rBnb7KiuXG0D32_F15iBO9XrAWNOKsIueBR4jRTMiLv14n0CCpFzcjPbhMLQ1nGkRNydQsC6cq_Ba4o02I88IuIhHZigsnZWFSu9ClnWqeJBUNqaxHIR8ACKfIFfhbYQq9XSRzjQjHDdXBTc7MbcLJie9q1zo81wacq4zwiysREz8A"/>
+<div class="flex-1 flex flex-col gap-1 min-w-0 bg-surface-container rounded-xl p-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold truncate">Dheeraj Kumar</span>
+<span class="font-label-caps text-label-caps text-outline">1h ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              The typography hierarchy looks razor sharp! Make sure the contrast ratio on muted badges is WCAG AAA.
+            </p>
+<div class="flex items-center gap-space-xs mt-1">
+<button class="px-2 py-0.5 rounded bg-surface-variant text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps flex items-center gap-1">
+<span>👍</span> 2
+              </button>
+<button class="font-label-code text-label-code text-outline hover:text-primary pl-1">Reply</button>
+</div>
+</div>
+</div>
+<!-- Comment 2: Priya -->
+<div class="flex items-start gap-space-sm">
+<img class="w-8 h-8 rounded-full object-cover shrink-0 mt-0.5" data-alt="Priya Singh portrait with soft warm lighting in front of modern office studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKEwI7Fs61fjHHjruz4vPp7jJXWfeDVyKXAlTiBHFojbo7_9xyxgX0LM9SXfhnsd-sgCChL4M6u3Vq3-pvehXacBnfoMs8s1kJDLvxRbAdEPenxjslPgrFt5pphQSfLVBshYDvlicfYVerhAr6oEKxjNsiH52l6P1Z9zrpSq8ASKo-7FFCAXcCG1XrR8dgWffy1l-tIDqEYaUlNDc3XPLwKMhWF3cdxi7fu5WFtzNdZCfMdFuB27dm0g"/>
+<div class="flex-1 flex flex-col gap-1 min-w-0 bg-surface-container rounded-xl p-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold truncate">Priya Singh</span>
+<span class="font-label-caps text-label-caps text-outline">25m ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Updated color tokens to <span class="font-label-code text-label-code px-1 py-0.5 rounded bg-surface-variant text-primary font-medium">#6366F1</span>, check out the new card previews.
+            </p>
+<div class="flex items-center gap-space-xs mt-1">
+<button class="px-2 py-0.5 rounded bg-surface-variant text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps flex items-center gap-1">
+<span>🔥</span> 3
+              </button>
+<button class="font-label-code text-label-code text-outline hover:text-primary pl-1">Reply</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Rich Comment Input Box -->
+<div class="flex flex-col gap-space-xs bg-surface-container rounded-xl p-space-sm mt-1">
+<textarea class="w-full bg-transparent text-on-surface font-body-md text-body-md placeholder:text-outline resize-none focus:outline-none" id="new-comment-text" placeholder="Leave a feedback or @mention someone..." rows="2"></textarea>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<button class="w-7 h-7 rounded-md flex items-center justify-center hover:bg-surface-variant transition-colors" onclick="insertMention()" title="Mention someone">
+<span class="material-symbols-outlined text-[18px]">alternate_email</span>
+</button>
+<button class="w-7 h-7 rounded-md flex items-center justify-center hover:bg-surface-variant transition-colors" title="Attach file">
+<span class="material-symbols-outlined text-[18px]">attach_file</span>
+</button>
+<button class="w-7 h-7 rounded-md flex items-center justify-center hover:bg-surface-variant transition-colors" title="Insert emoji">
+<span class="material-symbols-outlined text-[18px]">sentiment_satisfied</span>
+</button>
+</div>
+<button class="px-4 py-1.5 rounded-lg bg-primary text-on-primary font-headline-sm text-headline-sm font-medium flex items-center gap-1 shadow-sm active:scale-95 transition-all" onclick="postComment()">
+<span>Send</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  let isCompleted = false;
+  let isStarred = false;
+
+  function toggleComplete() {
+    isCompleted = !isCompleted;
+    const btn = document.getElementById('complete-btn');
+    const icon = document.getElementById('complete-icon');
+    const text = document.getElementById('complete-text');
+    
+    if (isCompleted) {
+      btn.classList.replace('bg-primary', 'bg-tertiary');
+      btn.classList.replace('text-on-primary', 'text-on-tertiary');
+      icon.innerText = 'task_alt';
+      text.innerText = 'Completed';
+      selectStatus('Completed', 'tertiary');
+    } else {
+      btn.classList.replace('bg-tertiary', 'bg-primary');
+      btn.classList.replace('text-on-tertiary', 'text-on-primary');
+      icon.innerText = 'check_circle';
+      text.innerText = 'Mark Complete';
+      selectStatus('In Progress', 'secondary');
+    }
+  }
+
+  function toggleStar() {
+    isStarred = !isStarred;
+    const starIcon = document.getElementById('star-icon');
+    const starBtn = document.getElementById('star-btn');
+    if (isStarred) {
+      starIcon.style.fontVariationSettings = "'FILL' 1";
+      starBtn.classList.add('text-secondary');
+    } else {
+      starIcon.style.fontVariationSettings = "'FILL' 0";
+      starBtn.classList.remove('text-secondary');
+    }
+  }
+
+  function toggleDropdown() {
+    const menu = document.getElementById('status-menu');
+    menu.classList.toggle('hidden');
+    menu.classList.toggle('flex');
+  }
+
+  function selectStatus(name, colorClass) {
+    document.getElementById('current-status').innerText = name;
+    const menu = document.getElementById('status-menu');
+    menu.classList.add('hidden');
+    menu.classList.remove('flex');
+  }
+
+  function updateProgress() {
+    const checkboxes = document.querySelectorAll('.subtask-checkbox');
+    let total = checkboxes.length;
+    let checked = 0;
+    checkboxes.forEach(cb => {
+      const labelText = cb.nextElementSibling;
+      if (cb.checked) {
+        checked++;
+        labelText.classList.add('line-through', 'text-outline');
+        labelText.classList.remove('text-on-surface');
+      } else {
+        labelText.classList.remove('line-through', 'text-outline');
+        labelText.classList.add('text-on-surface');
+      }
+    });
+
+    const percent = Math.round((checked / total) * 100);
+    document.getElementById('subtask-counter').innerText = `${checked}/${total} completed`;
+    document.getElementById('subtask-progress').style.width = `${percent}%`;
+  }
+
+  function addSubtask() {
+    const input = document.getElementById('new-subtask-input');
+    const text = input.value.trim();
+    if (!text) return;
+
+    const list = document.getElementById('subtask-list');
+    const label = document.createElement('label');
+    label.className = 'flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container transition-colors cursor-pointer select-none';
+    label.innerHTML = `
+      <input type="checkbox" onchange="updateProgress()" class="subtask-checkbox w-4 h-4 rounded bg-surface-variant text-primary accent-primary cursor-pointer">
+      <span class="font-body-md text-body-md text-on-surface flex-1 min-w-0">${escapeHtml(text)}</span>
+    `;
+    list.appendChild(label);
+    input.value = '';
+    updateProgress();
+  }
+
+  function insertMention() {
+    const textarea = document.getElementById('new-comment-text');
+    textarea.value += '@';
+    textarea.focus();
+  }
+
+  function postComment() {
+    const textarea = document.getElementById('new-comment-text');
+    const text = textarea.value.trim();
+    if (!text) return;
+
+    const container = document.getElementById('comments-container');
+    const newComment = document.createElement('div');
+    newComment.className = 'flex items-start gap-space-sm';
+    newComment.innerHTML = `
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0iRXzv10MO3JR7wW6rDxypqHvQWbVlIFuMRgjYHtQEBqzaVgOjN0BMLN4tfkSStOmZ8637odOMYeTtvF-36Cw6LDIfuXRxLwqvchvIrX8c5k2XEl5T8-f4G2KBRxpEQsvNZFxnCte_bQH0nP9hFPprjfP5m56CSqzTu0kqnfb6yii-okol00k1-a8Dtl29Eprw1WEJ0xYiSFvK8F8ywaRkEKe436ITLRWLZSBnGB2FtWLaNg2sP0BBw" alt="You" class="w-8 h-8 rounded-full object-cover shrink-0 mt-0.5">
+      <div class="flex-1 flex flex-col gap-1 min-w-0 bg-surface-container rounded-xl p-space-sm">
+        <div class="flex items-center justify-between">
+          <span class="font-body-sm text-body-sm text-on-surface font-semibold truncate">You</span>
+          <span class="font-label-caps text-label-caps text-outline">Just now</span>
+        </div>
+        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          ${escapeHtml(text)}
+        </p>
+      </div>
+    `;
+    container.appendChild(newComment);
+    textarea.value = '';
+  }
+
+  function escapeHtml(str) {
+    return str.replace(/[&<>"']/g, function(m) {
+      return ({ '&': '&', '<': '<', '>': '>', '"': '"', "'": ''' })[m];
+    });
+  }
+</script></main></body></html>

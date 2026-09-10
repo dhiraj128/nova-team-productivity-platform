@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#0b1326;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "error-container": "#93000a", "inverse-on-surface": "#283044", "on-primary-fixed": "#07006c", "outline": "#908fa0", "surface-variant": "#2d3449", "inverse-surface": "#dae2fd", "on-secondary-fixed": "#001f26", "on-surface": "#dae2fd", "on-secondary-container": "#00424e", "on-tertiary-fixed-variant": "#005236", "on-tertiary-fixed": "#002113", "primary-fixed-dim": "#c0c1ff", "on-primary": "#1000a9", "secondary-fixed-dim": "#4cd7f6", "tertiary-fixed": "#6ffbbe", "surface-container-low": "#131b2e", "on-error": "#690005", "on-tertiary-container": "#000703", "on-secondary-fixed-variant": "#004e5c", "tertiary-fixed-dim": "#4edea3", "surface": "#0b1326", "surface-tint": "#c0c1ff", "on-secondary": "#003640", "on-primary-container": "#0d0096", "error": "#ffb4ab", "surface-container-highest": "#2d3449", "primary-container": "#8083ff", "secondary-fixed": "#acedff", "background": "#0b1326", "surface-container": "#171f33", "surface-container-lowest": "#060e20", "surface-dim": "#0b1326", "outline-variant": "#464554", "on-primary-fixed-variant": "#2f2ebe", "on-background": "#dae2fd", "secondary-container": "#03b5d3", "primary-fixed": "#e1e0ff", "secondary": "#4cd7f6", "inverse-primary": "#494bd6", "tertiary-container": "#00885d", "tertiary": "#4edea3", "on-surface-variant": "#c7c4d7", "surface-bright": "#31394d", "primary": "#c0c1ff", "on-tertiary": "#003824", "surface-container-high": "#222a3d", "on-error-container": "#ffdad6" }, borderRadius: { DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem" }, spacing: { "space-lg": "1.5rem", "space-xs": "0.25rem", "gutter-desktop": "1.5rem", "space-base": "1rem", "sidebar-collapsed-width": "3.5rem", "space-2xs": "0.125rem", "space-sm": "0.5rem", "kanban-col-width": "18rem", "space-md": "0.75rem", "sidebar-width": "15rem", "space-xl": "2rem", "gutter-mobile": "1rem", "space-2xl": "3rem" }, fontFamily: { "headline-md": ["Geist"], "headline-sm": ["Geist"], "label-caps": ["JetBrains Mono"], "body-sm": ["Geist"], "headline-lg-mobile": ["Geist"], "body-lg": ["Geist"], "label-code": ["JetBrains Mono"], "headline-lg": ["Geist"], "body-md": ["Geist"], "display-hero": ["Geist"] }, fontSize: { "headline-md": ["22px", { lineHeight: "28px", letterSpacing: "-0.02em", fontWeight: "600" }], "headline-sm": ["16px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "600" }], "label-caps": ["10px", { lineHeight: "14px", letterSpacing: "0.06em", fontWeight: "600" }], "body-sm": ["12px", { lineHeight: "18px", letterSpacing: "0em", fontWeight: "400" }], "headline-lg-mobile": ["24px", { lineHeight: "32px", letterSpacing: "-0.02em", fontWeight: "600" }], "body-lg": ["15px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "400" }], "label-code": ["12px", { lineHeight: "16px", letterSpacing: "-0.01em", fontWeight: "500" }], "headline-lg": ["30px", { lineHeight: "38px", letterSpacing: "-0.025em", fontWeight: "600" }], "body-md": ["13px", { lineHeight: "20px", letterSpacing: "-0.005em", fontWeight: "400" }], "display-hero": ["40px", { lineHeight: "48px", letterSpacing: "-0.03em", fontWeight: "600" }] } } } }</script></head><body class="bg-surface text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Go back" class="min-w-[44px] min-h-[44px] flex items-center justify-center -ml-2 text-on-surface hover:text-primary transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[20px]">arrow_back</span></button><img alt="NOVA Geometric Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WCJLkGyJofkzYD2CaS2vF54Ev4AWVHNSELk_uJTtVlpCeziwG7r-Uzv0Aw6O867xDO4FXCa8hrkT7aUMIJ-pTgsbcmjBAyXPpqirgYvn7UsAx_yw_bJZ7pYDgIq3gLhvNNKWghqYCYq3L97CrIHcTWMaELEeJwVmQNIp95mdNdoGP67VI6kVsZPgEY7TMkAVdrR7-0bV5agQ46OLcLCWXt7hDBwOIXmaNae-T0T8b_kOcOBchg4JDSUusf"/><h1 class="font-headline-sm text-headline-sm text-on-surface truncate font-semibold ml-1">Project Board</h1></div><div class="flex items-center gap-space-xs"><button aria-label="Search" class="min-w-[44px] min-h-[44px] flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">search</span></button><div class="flex items-center justify-center pl-1"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0iRXzv10MO3JR7wW6rDxypqHvQWbVlIFuMRgjYHtQEBqzaVgOjN0BMLN4tfkSStOmZ8637odOMYeTtvF-36Cw6LDIfuXRxLwqvchvIrX8c5k2XEl5T8-f4G2KBRxpEQsvNZFxnCte_bQH0nP9hFPprjfP5m56CSqzTu0kqnfb6yii-okol00k1-a8Dtl29Eprw1WEJ0xYiSFvK8F8ywaRkEKe436ITLRWLZSBnGB2FtWLaNg2sP0BBw"/></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full">
+<!-- Subtle Ambient Glow Canvas Decor -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-16 -right-16 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-24 -left-20 w-48 h-48 bg-secondary-container/10 rounded-full blur-2xl pointer-events-none"></div>
+<!-- Project Context & Meta Overview -->
+<section class="px-gutter-mobile pt-space-base pb-space-sm flex flex-col gap-space-sm relative z-10">
+<!-- Title and Status Chips -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-container/30 text-tertiary font-label-caps text-label-caps">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+              IN PROGRESS
+            </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-error-container/40 text-error font-label-caps text-label-caps">
+              URGENT
+            </span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">
+              SPRINT 4
+            </span>
+</div>
+<span class="font-label-code text-label-code text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">event</span> Nov 15
+          </span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight">
+          NOVA Website Redesign
+        </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+          Next-gen marketing, documentation, and client portal architecture overhaul.
+        </p>
+</div>
+<!-- Live Metric Bento Strip -->
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-primary/15 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">data_thresholding</span>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">SPRINT PACE</p>
+<p class="font-headline-sm text-headline-sm text-on-surface">72% Completed</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-tertiary">18</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/ 24 tasks</span>
+</div>
+</div>
+<!-- Progress Gauge -->
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden flex">
+<div class="bg-tertiary h-full transition-all duration-500" style="width: 75%;"></div>
+<div class="bg-secondary h-full transition-all duration-500" style="width: 17%;"></div>
+<div class="bg-surface-variant h-full" style="width: 8%;"></div>
+</div>
+<!-- Task Velocity Pills -->
+<div class="flex items-center justify-between pt-0.5 text-on-surface-variant font-label-code text-label-code">
+<span class="flex items-center gap-1 text-tertiary">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> 18 Done
+          </span>
+<span class="flex items-center gap-1 text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 4 In Progress
+          </span>
+<span class="flex items-center gap-1 text-outline">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span> 2 To Do
+          </span>
+</div>
+</div>
+<!-- Quick Action Floating Bar -->
+<div class="grid grid-cols-3 gap-space-xs pt-1">
+<button class="flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-primary text-on-primary font-body-sm text-body-sm active:scale-95 transition-all shadow-md" id="addTaskBtn">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>Add Task</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-sm text-body-sm active:scale-95 transition-all" id="shareModalBtn">
+<span class="material-symbols-outlined text-[16px]">share</span>
+<span>Share</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-sm text-body-sm active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[16px]">settings</span>
+<span>Settings</span>
+</button>
+</div>
+</section>
+<!-- Project Views Tabs -->
+<div class="w-full px-gutter-mobile border-b-0">
+<div class="flex items-center gap-space-xs overflow-x-auto py-1 scrollbar-none">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-highest text-primary font-headline-sm text-headline-sm flex items-center gap-1.5 shadow-sm whitespace-nowrap">
+<span class="material-symbols-outlined text-[16px]">space_dashboard</span>
+          Kanban Board
+        </button>
+<button class="px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-headline-sm text-headline-sm flex items-center gap-1.5 whitespace-nowrap">
+<span class="material-symbols-outlined text-[16px]">format_list_bulleted</span>
+          List View
+        </button>
+<button class="px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-headline-sm text-headline-sm flex items-center gap-1.5 whitespace-nowrap">
+<span class="material-symbols-outlined text-[16px]">group</span>
+          Team (5)
+        </button>
+<button class="px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-headline-sm text-headline-sm flex items-center gap-1.5 whitespace-nowrap">
+<span class="material-symbols-outlined text-[16px]">timeline</span>
+          Activity
+        </button>
+</div>
+</div>
+</div>
+<!-- Kanban Stage Canvas -->
+<div class="w-full overflow-x-auto pb-8 pt-space-sm scrollbar-none">
+<div class="flex gap-space-md px-gutter-mobile min-w-max">
+<!-- ================= 1. TO DO COLUMN ================= -->
+<section class="w-kanban-col-width flex flex-col gap-space-sm bg-surface-container-lowest/80 rounded-xl p-space-sm">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-outline"></span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">To Do</h3>
+<span class="px-1.5 py-0.2 rounded-md bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">2</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1" title="Add item to To Do">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-sm kanban-lane" data-lane="todo">
+<!-- Task 1 -->
+<article class="p-space-sm rounded-xl bg-surface-container shadow-sm flex flex-col gap-space-xs group active:scale-[0.99] transition-all cursor-grab" draggable="true">
+<div class="flex items-center justify-between">
+<span class="px-1.5 py-0.5 rounded bg-error-container/20 text-error font-label-caps text-label-caps">HIGH</span>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-outline">drag_indicator</span>
+</div>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface leading-snug">
+              Implement task management drag-and-drop
+            </p>
+<div class="w-full bg-surface-container-highest rounded-full h-1 my-0.5 overflow-hidden">
+<div class="bg-outline h-full" style="width: 0%;"></div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant font-label-code text-label-code">
+<div class="flex items-center gap-space-xs">
+<span class="flex items-center gap-0.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">checklist</span> 0/3
+                </span>
+<span class="flex items-center gap-0.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">mode_comment</span> 2
+                </span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="text-on-surface-variant text-[11px]">Nov 14</span>
+<img alt="Rahul Sharma" class="w-6 h-6 rounded-full object-cover shadow-sm" data-alt="Rahul Sharma team lead modern corporate headshot with friendly expression, soft volumetric studio lighting, warm charcoal minimalist backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQYpYOeyGkY-75j8mqiMPYxn7GLhEvyvaIYKMNO7O0TDW07GkhQp1DNinr0UMfm1UAF7ReNvX5J-vZmlJbgm54Zd0JoCjF1HUX3HmRIuRy9-C-NOoQB6cHyWECP1oY4fRQ2RFFeFx14fQZb8ZNW3ckSpPZwxfDwxVe8mRmvj8jt_kkPv7Mzp7jk35b71aK1dQcx-cFs1OuRPVlWOMBzsBP7EQIR1E0cqac3Kcj9hHOSLjKxrSm6hkzlg"/>
+</div>
+</div>
+</article>
+<!-- Task 2 -->
+<article class="p-space-sm rounded-xl bg-surface-container shadow-sm flex flex-col gap-space-xs group active:scale-[0.99] transition-all cursor-grab" draggable="true">
+<div class="flex items-center justify-between">
+<span class="px-1.5 py-0.5 rounded bg-secondary-container/20 text-secondary font-label-caps text-label-caps">MEDIUM</span>
+<span class="material-symbols-outlined text-[14px] text-outline">drag_indicator</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface leading-snug">
+              Build database schema v2 migrations
+            </p>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant font-label-code text-label-code">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>Nov 16</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="text-on-surface-variant text-[11px] truncate max-w-[80px]">Dheeraj</span>
+<img alt="Dheeraj Kumar" class="w-6 h-6 rounded-full object-cover shadow-sm" data-alt="Dheeraj Kumar backend specialist avatar portrait with subtle neon rim light, moody tech office background, soft depth of field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRgsRlLUHyc9kwwbiCz1LGO5n_kEFVrzMKY8ZHDZHfMdnwLi8b4kPOHTv_5PFhyqiYwsyW_U2fo1sfrr3kYP7Bsqkxe8EvwHh743ARuFug8QkST5nKfbQuhu5g8n9wOsN8qRxJ3zOKWnvUh7Lw9f2q28dUxEvhQs8SvEQSssRg8-tdonJMfxgxm_DMUpZWQLX98C2g1D9VZAgRfmaVR8IRTlxWCgZUY3deloXV4hRwaCxTn5zvjjTr5A"/>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- ================= 2. IN PROGRESS COLUMN ================= -->
+<section class="w-kanban-col-width flex flex-col gap-space-sm bg-surface-container-lowest/80 rounded-xl p-space-sm">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-ping"></span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">In Progress</h3>
+<span class="px-1.5 py-0.2 rounded-md bg-secondary/15 text-secondary font-label-caps text-label-caps">3</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1" title="Add item to In Progress">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-sm kanban-lane" data-lane="inprogress">
+<!-- Task 1 (High priority with attachments) -->
+<article class="p-space-sm rounded-xl bg-surface-container shadow-sm flex flex-col gap-space-xs group active:scale-[0.99] transition-all cursor-grab relative" draggable="true">
+<div class="flex items-center justify-between">
+<span class="px-1.5 py-0.5 rounded bg-error-container/30 text-error font-label-caps text-label-caps flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> URGENT
+              </span>
+<span class="material-symbols-outlined text-[14px] text-outline">drag_indicator</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface leading-snug">
+              Design landing page hero & interactive mockups
+            </p>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 my-0.5 overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 50%;"></div>
+</div>
+<!-- Visual mini mockup indicator inside card -->
+<div class="w-full h-16 rounded-lg bg-surface-container-low overflow-hidden relative group-hover:opacity-95 transition-opacity">
+<img alt="Design Preview" class="w-full h-full object-cover opacity-80" data-alt="High tech website UI wireframe landing page preview on dark theme with glowing 3D geometries and dynamic typography layout" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbS8FN8IVYNv9k4MsoVmmq8neqPosTI54jq9AbLoiSHjShzrvBc1FvvgJZIBc8iPSonUxGj7Oy6skL_qOCuiThlwISUHsGYGRKJMiqFqSIiPjavEbkRKPG4nGEYCUO7KG0ZqRFrusHThw9A6HznN_tCkux1itw0Dt3eN25KaNKcO0CAmcYSZVDQEJeECA05unbV3Zv_iAJZhrOByyX0ppjaRCdvsGUv6IPw4vOLNdqAgmsvXBiAs4hbA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<span class="absolute bottom-1 right-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/80 text-[10px] text-on-surface font-label-code">Figma Sync</span>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant font-label-code text-label-code">
+<div class="flex items-center gap-space-xs">
+<span class="flex items-center gap-0.5 text-secondary">
+<span class="material-symbols-outlined text-[14px]">checklist</span> 2/4
+                </span>
+<span class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">mode_comment</span> 5
+                </span>
+<span class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">attach_file</span> 2
+                </span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="text-error text-[11px] font-medium">Tomorrow</span>
+<img alt="Priya Singh" class="w-6 h-6 rounded-full object-cover shadow-sm" data-alt="Priya Singh UI designer close up headshot smiling warm amber lighting contemporary workspace aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUydmGgGeJlmgv9iTxfRVHrsUiYCvbpT2UMm5nutUR2_Lyb1jNp1KWL4NOp2hMD3z0FHCvPs-c28oD2KRhNmf6UwhETVINtigfvLo7adiAXuuckkt5R1ZgYqNAosJhC9Uq_Jr3GoXhY1-svy9iosQeOKOLJEEhwlr5EUpV9p8rSKhfDhTMq-ZAsaYf1jbyTVjymOmurnGx7nRqU49t507R2S0iswRl1ad36gmDFgNwXU_KNSFcQ6fCeg"/>
+</div>
+</div>
+</article>
+<!-- Task 2 -->
+<article class="p-space-sm rounded-xl bg-surface-container shadow-sm flex flex-col gap-space-xs group active:scale-[0.99] transition-all cursor-grab" draggable="true">
+<div class="flex items-center justify-between">
+<span class="px-1.5 py-0.5 rounded bg-primary/20 text-primary-fixed-dim font-label-caps text-label-caps">HIGH</span>
+<span class="material-symbols-outlined text-[14px] text-outline">drag_indicator</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface leading-snug">
+              Implement JWT authentication & OAuth Google
+            </p>
+<div class="w-full bg-surface-container-highest rounded-full h-1 my-0.5 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 60%;"></div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant font-label-code text-label-code">
+<div class="flex items-center gap-space-xs">
+<span class="flex items-center gap-0.5 text-primary">
+<span class="material-symbols-outlined text-[14px]">checklist</span> 3/5
+                </span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="text-on-surface-variant text-[11px]">Nov 13</span>
+<img alt="Dheeraj Kumar" class="w-6 h-6 rounded-full object-cover shadow-sm" data-alt="Dheeraj Kumar backend developer focused portrait with clean glasses and high-contrast blue keylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6yfa_2iFRSO-j3BbtlyIiMFwNFrillDcx01x2PUt0r5i-osjkY_p_ZhXkOrg8sAKDDmdJulpWYIpH73X7FYkBnauovXtJR25VuIQMxqWVXubO1PoNlTR9tXsQiBELBv-x_AWqqzK3sgVAvJ4CfW4VjUs7Nf-gxjkIwYHjCQRcCMQiCb2tMg85nVM8iPl6V808IgMLr8kPBSmz6d8qdoJfMCLM9goHgl8dAJc4BceaKlEKI1yKE33qbQ"/>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- ================= 3. IN REVIEW COLUMN ================= -->
+<section class="w-kanban-col-width flex flex-col gap-space-sm bg-surface-container-lowest/80 rounded-xl p-space-sm">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">In Review</h3>
+<span class="px-1.5 py-0.2 rounded-md bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">1</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1" title="Add item to Review">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-sm kanban-lane" data-lane="review">
+<!-- Task 1 -->
+<article class="p-space-sm rounded-xl bg-surface-container shadow-sm flex flex-col gap-space-xs group active:scale-[0.99] transition-all cursor-grab" draggable="true">
+<div class="flex items-center justify-between">
+<span class="px-1.5 py-0.5 rounded bg-primary/20 text-primary-fixed-dim font-label-caps text-label-caps">HIGH</span>
+<span class="material-symbols-outlined text-[14px] text-outline">drag_indicator</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface leading-snug">
+              Create project REST API & OpenAPI docs
+            </p>
+<div class="flex items-center gap-1 text-[11px] text-on-secondary-container bg-secondary-container/20 px-2 py-0.5 rounded w-max">
+<span class="material-symbols-outlined text-[13px]">rate_review</span> PR #104 Open
+            </div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant font-label-code text-label-code">
+<div class="flex items-center gap-space-xs">
+<span class="flex items-center gap-0.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">mode_comment</span> 1
+                </span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="text-error font-medium text-[11px]">Today</span>
+<img alt="Aman Kumar" class="w-6 h-6 rounded-full object-cover shadow-sm" data-alt="Aman Kumar software architect profile photo soft neon rim lighting minimalist studio backdrop cinematic angle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEzM0NqadjF8TnwP19WovTYTa0y6Hzl5aS-UV-V5RC8HQwFQ09rS2ca8HoFEEcgOvrX57njbfhCKmX_spldkIqyQ9X-FWXI_MspGODgFomuIJRcZwx7I5qU7BBDkv5_fiWpWQLoJNzl4x1E1gaNozPz17CFD4Ol3GEEs_2hUnK8G6G4MepGAHpndyIZRM5yL8YjZLAqdsg6HeeYtvaqsI9vclLBTytL4E7O2OB0D6TVNnT7P6uspWX8Q"/>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- ================= 4. COMPLETED COLUMN ================= -->
+<section class="w-kanban-col-width flex flex-col gap-space-sm bg-surface-container-lowest/80 rounded-xl p-space-sm">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Completed</h3>
+<span class="px-1.5 py-0.2 rounded-md bg-tertiary/15 text-tertiary font-label-caps text-label-caps">4</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1" title="Archive completed">
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-sm kanban-lane" data-lane="completed">
+<!-- Completed Task Card -->
+<article class="p-space-sm rounded-xl bg-surface-container/60 shadow-sm flex flex-col gap-space-xs group opacity-90 hover:opacity-100 transition-all cursor-grab" draggable="true">
+<div class="flex items-center justify-between">
+<span class="px-1.5 py-0.5 rounded bg-tertiary-container/30 text-tertiary font-label-caps text-label-caps flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">check_circle</span> DONE
+              </span>
+<span class="material-symbols-outlined text-[14px] text-outline">drag_indicator</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface line-through opacity-80 leading-snug">
+              Deploy staging cluster on Vercel
+            </p>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant font-label-code text-label-code">
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[14px]">verified</span> Verified Build
+              </div>
+<div class="flex items-center gap-1.5">
+<img alt="Dheeraj Kumar" class="w-6 h-6 rounded-full object-cover shadow-sm grayscale contrast-125" data-alt="Dheeraj Kumar backend specialist friendly portrait sharp contrast moody studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8dPAkyMaE6-bFrjSfY1WTZTDdJr-84sPSWXe7IruhqD7zY_mTy0MIyoJ7QFPRT3AYWieCGXPu3MtY9lZt47j_Nx7ZjvIo1iqhrK2Z3b6S6Xu3K19nqeuD-t9U5FpDRDXmcKNT4DPDxwHk4O8VJSmIcGrhWrxm0wcrQiMsT_usqllU7BR5bVifxWmM-Kj5cJ7STM30yXSaD5PbOX6EXcUsbcjKMEGWW61Iyx75HOxaGk6liC37WhO0Zw"/>
+</div>
+</div>
+</article>
+</div>
+</section>
+</div>
+</div>
+<!-- Interactive Quick-Action Toast feedback element (Hidden by default) -->
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-surface-container-highest px-4 py-2 rounded-full shadow-2xl text-on-surface font-body-sm text-body-sm flex items-center gap-2 pointer-events-none opacity-0 transition-opacity duration-300 z-50" id="novaFeedbackToast">
+<span class="material-symbols-outlined text-tertiary text-[18px]">check_circle</span>
+<span id="novaToastMsg">Task card updated</span>
+</div>
+</div>
+<script>
+  // Micro-interactions: Drag & drop mock feel, task action triggers
+  (function() {
+    const cards = document.querySelectorAll('article[draggable="true"]');
+    const toast = document.getElementById('novaFeedbackToast');
+    const toastMsg = document.getElementById('novaToastMsg');
+    const addTaskBtn = document.getElementById('addTaskBtn');
+    const shareBtn = document.getElementById('shareModalBtn');
+
+    function showToast(text) {
+      if (!toast || !toastMsg) return;
+      toastMsg.innerText = text;
+      toast.classList.remove('opacity-0');
+      toast.classList.add('opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0');
+      }, 2200);
+    }
+
+    cards.forEach(card => {
+      card.addEventListener('dragstart', () => {
+        card.classList.add('opacity-40');
+      });
+      card.addEventListener('dragend', () => {
+        card.classList.remove('opacity-40');
+        showToast("Task reordered successfully");
+      });
+    });
+
+    if (addTaskBtn) {
+      addTaskBtn.addEventListener('click', () => {
+        showToast("Quick task modal opened");
+      });
+    }
+
+    if (shareBtn) {
+      shareBtn.addEventListener('click', () => {
+        showToast("Board link copied to clipboard");
+      });
+    }
+  })();
+</script></main></body></html>
