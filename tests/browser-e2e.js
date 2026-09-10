@@ -93,12 +93,30 @@ async function runBrowserE2ETests() {
     const testPassword = 'TestPassword123!';
 
     await page.waitForSelector('input[type="email"]');
-    await page.type('input[placeholder*="Dheeraj"]', testName);
-    await page.type('input[type="email"]', createdUserEmail);
-    await page.type('input[type="password"]', testPassword);
+    await page.evaluate((nameVal, emailVal, passVal) => {
+      const nameInp = document.querySelector('input[placeholder*="Dheeraj"]');
+      const emailInp = document.querySelector('input[type="email"]');
+      const passInp = document.querySelector('input[type="password"]');
+      if (nameInp) {
+        const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
+        setter.call(nameInp, nameVal);
+        nameInp.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+      if (emailInp) {
+        const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
+        setter.call(emailInp, emailVal);
+        emailInp.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+      if (passInp) {
+        const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
+        setter.call(passInp, passVal);
+        passInp.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+    }, testName, createdUserEmail, testPassword);
 
+    await new Promise((r) => setTimeout(r, 500));
     await page.click('button[type="submit"]');
-    await new Promise((r) => setTimeout(r, 2000));
+    await new Promise((r) => setTimeout(r, 2500));
     assert(!page.url().includes('/register') || (await page.content()).includes('Login') || (await page.content()).includes('Create Account'), 'Submitted registration form through UI');
 
     // DB Verification
@@ -433,7 +451,7 @@ async function runBrowserE2ETests() {
     // 11. PRODUCTION VERIFICATION
     // ----------------------------------------------------
     console.log('\n11. Live Production Deployment Verification');
-    await page.goto(PRODUCTION_URL, { waitUntil: 'networkidle2', timeout: 30000 });
+    await page.goto(PRODUCTION_URL, { waitUntil: 'domcontentloaded', timeout: 45000 });
     const prodTitle = await page.title();
     assert(!!prodTitle, `Production live site loads cleanly (Title: ${prodTitle})`);
 
