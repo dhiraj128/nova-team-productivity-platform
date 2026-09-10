@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "prisma generate --schema=prisma/schema.sqlite.prisma && ts-node -r tsconfig-paths/register --compiler-options \"{\\\"module\\\":\\\"CommonJS\\\"}\" tests/api-e2e.test.ts && prisma generate --schema=prisma/schema.prisma",
-    "test:browser": "node tests/browser-e2e.js",
+    "test:browser": "prisma generate --schema=prisma/schema.sqlite.prisma && node tests/browser-e2e.js && prisma generate --schema=prisma/schema.prisma",
     "db:push": "prisma db push",
     "db:seed": "pnpm exec ts-node --transpile-only prisma/seed.ts",
     "postinstall": "prisma generate"
