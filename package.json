@@ -7,7 +7,7 @@
     "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "pnpm exec ts-node --transpile-only tests/e2e.test.ts",
+    "test": "prisma generate --schema=prisma/schema.sqlite.prisma && ts-node --compiler-options \"{\\\"module\\\":\\\"CommonJS\\\"}\" tests/e2e.test.ts && prisma generate",
     "db:push": "prisma db push",
     "db:seed": "pnpm exec ts-node --transpile-only prisma/seed.ts",
     "postinstall": "prisma generate"
