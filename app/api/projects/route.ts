@@ -11,10 +11,11 @@ export async function GET(request: Request) {
     }
     const userId = (session.user as any).id;
 
-    const host = request.headers.get('host') || 'localhost:3000';
-    const protocol = request.headers.get('x-forwarded-proto') || (host.includes('localhost') ? 'http' : 'https');
+    const reqUrl = request?.url || '/';
+    const host = (request?.headers && typeof request.headers.get === 'function' ? request.headers.get('host') : null) || 'localhost:3000';
+    const protocol = (request?.headers && typeof request.headers.get === 'function' ? request.headers.get('x-forwarded-proto') : null) || (host.includes('localhost') ? 'http' : 'https');
     const baseUrl = process.env.NEXTAUTH_URL || `${protocol}://${host}`;
-    const { searchParams } = new URL(request.url || '/', baseUrl);
+    const { searchParams } = new URL(reqUrl, baseUrl);
     const status = searchParams.get('status');
     const search = searchParams.get('search');
     const sort = searchParams.get('sort') || 'updatedAt';
