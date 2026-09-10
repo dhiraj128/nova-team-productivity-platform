@@ -93,12 +93,29 @@ async function runBrowserE2ETests() {
     const testPassword = 'TestPassword123!';
 
     await page.waitForSelector('input[type="email"]');
-    await page.focus('input[placeholder*="Dheeraj"]');
-    await page.keyboard.type(testName);
-    await page.focus('input[type="email"]');
-    await page.keyboard.type(createdUserEmail);
-    await page.focus('input[type="password"]');
-    await page.keyboard.type(testPassword);
+    await page.evaluate((nameVal, emailVal, passVal) => {
+      const nameInp = document.querySelector('input[placeholder*="Dheeraj"]');
+      const emailInp = document.querySelector('input[type="email"]');
+      const passInp = document.querySelector('input[type="password"]');
+      if (nameInp) {
+        const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
+        setter.call(nameInp, nameVal);
+        nameInp.dispatchEvent(new Event('input', { bubbles: true }));
+        nameInp.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+      if (emailInp) {
+        const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
+        setter.call(emailInp, emailVal);
+        emailInp.dispatchEvent(new Event('input', { bubbles: true }));
+        emailInp.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+      if (passInp) {
+        const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
+        setter.call(passInp, passVal);
+        passInp.dispatchEvent(new Event('input', { bubbles: true }));
+        passInp.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+    }, testName, createdUserEmail, testPassword);
 
     await new Promise((r) => setTimeout(r, 500));
     await page.click('button[type="submit"]');
