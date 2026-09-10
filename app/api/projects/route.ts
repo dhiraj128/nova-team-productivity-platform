@@ -11,7 +11,10 @@ export async function GET(request: Request) {
     }
     const userId = (session.user as any).id;
 
-    const { searchParams } = new URL(request.url || '/', 'http://localhost');
+    const host = request.headers.get('host') || 'localhost:3000';
+    const protocol = request.headers.get('x-forwarded-proto') || (host.includes('localhost') ? 'http' : 'https');
+    const baseUrl = process.env.NEXTAUTH_URL || `${protocol}://${host}`;
+    const { searchParams } = new URL(request.url || '/', baseUrl);
     const status = searchParams.get('status');
     const search = searchParams.get('search');
     const sort = searchParams.get('sort') || 'updatedAt';

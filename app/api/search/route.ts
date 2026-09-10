@@ -8,7 +8,10 @@ export async function GET(request: Request) {
     if (!session || !session.user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
-    const { searchParams } = new URL(request.url || '/', 'http://localhost');
+    const host = request.headers.get('host') || 'localhost:3000';
+    const protocol = request.headers.get('x-forwarded-proto') || (host.includes('localhost') ? 'http' : 'https');
+    const baseUrl = process.env.NEXTAUTH_URL || `${protocol}://${host}`;
+    const { searchParams } = new URL(request.url || '/', baseUrl);
     const query = searchParams.get('q')?.trim();
 
     if (!query || query.length < 2) {

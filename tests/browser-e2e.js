@@ -93,34 +93,12 @@ async function runBrowserE2ETests() {
     const testPassword = 'TestPassword123!';
 
     await page.waitForSelector('input[type="email"]');
-    await page.evaluate((nameVal, emailVal, passVal) => {
-      const form = document.querySelector('form');
-      if (form) {
-        const inputs = Array.from(form.querySelectorAll('input'));
-        const nameInp = inputs[0];
-        const emailInp = inputs[1];
-        const passInp = inputs[2];
-
-        if (nameInp) {
-          const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
-          setter.call(nameInp, nameVal);
-          nameInp.dispatchEvent(new Event('input', { bubbles: true }));
-          nameInp.dispatchEvent(new Event('change', { bubbles: true }));
-        }
-        if (emailInp) {
-          const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
-          setter.call(emailInp, emailVal);
-          emailInp.dispatchEvent(new Event('input', { bubbles: true }));
-          emailInp.dispatchEvent(new Event('change', { bubbles: true }));
-        }
-        if (passInp) {
-          const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
-          setter.call(passInp, passVal);
-          passInp.dispatchEvent(new Event('input', { bubbles: true }));
-          passInp.dispatchEvent(new Event('change', { bubbles: true }));
-        }
-      }
-    }, testName, createdUserEmail, testPassword);
+    const inputs = await page.$$('form input');
+    if (inputs.length >= 3) {
+      await inputs[0].type(testName);
+      await inputs[1].type(createdUserEmail);
+      await inputs[2].type(testPassword);
+    }
 
     await new Promise((r) => setTimeout(r, 500));
     await page.click('button[type="submit"]');
