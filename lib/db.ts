@@ -29,8 +29,10 @@ function sanitizeDatabaseUrl(url?: string): string | undefined {
 }
 
 const rawDbUrl = process.env.DATABASE_URL || process.env.POSTGRES_PRISMA_URL || process.env.POSTGRES_URL;
-if (rawDbUrl) {
-  process.env.DATABASE_URL = sanitizeDatabaseUrl(rawDbUrl);
+const sanitizedDbUrl = sanitizeDatabaseUrl(rawDbUrl);
+
+if (sanitizedDbUrl) {
+  process.env.DATABASE_URL = sanitizedDbUrl;
 }
 
 const globalForPrisma = global as unknown as { prisma: PrismaClient };
@@ -38,6 +40,7 @@ const globalForPrisma = global as unknown as { prisma: PrismaClient };
 export const db =
   globalForPrisma.prisma ||
   new PrismaClient({
+    ...(sanitizedDbUrl ? { datasources: { db: { url: sanitizedDbUrl } } } : {}),
     log: process.env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
   });
 
