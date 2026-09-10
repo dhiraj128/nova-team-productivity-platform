@@ -1,6 +1,6 @@
 # NOVA — Team Productivity Platform
 
-![NOVA Platform](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
+![NOVA Platform](https://img.shields.io/badge/Status-Verified_Production-success?style=for-the-badge)
 ![Next.js 14](https://img.shields.io/badge/Next.js-14.2-black?style=for-the-badge&logo=next.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.6-blue?style=for-the-badge&logo=typescript)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8?style=for-the-badge&logo=tailwind-css)
