@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && next build",
+    "build": "prisma generate && node scripts/build-db-setup.js && next build",
     "start": "next start",
     "lint": "next lint",
     "test": "prisma generate --schema=prisma/schema.sqlite.prisma && ts-node -r tsconfig-paths/register --compiler-options \"{\\\"module\\\":\\\"CommonJS\\\"}\" tests/api-e2e.test.ts && prisma generate --schema=prisma/schema.prisma",
