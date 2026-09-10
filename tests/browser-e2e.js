@@ -102,7 +102,7 @@ async function runBrowserE2ETests() {
 
     await new Promise((r) => setTimeout(r, 500));
     await page.click('button[type="submit"]');
-    await new Promise((r) => setTimeout(r, 2500));
+    await new Promise((r) => setTimeout(r, 5000));
     assert(!page.url().includes('/register') || (await page.content()).includes('Login') || (await page.content()).includes('Create Account'), 'Submitted registration form through UI');
 
     // DB Verification

@@ -3,6 +3,14 @@ import CredentialsProvider from 'next-auth/providers/credentials';
 import { db } from '@/lib/db';
 import bcrypt from 'bcryptjs';
 
+if (!process.env.NEXTAUTH_URL || process.env.NEXTAUTH_URL.trim() === '') {
+  if (process.env.VERCEL_URL) {
+    process.env.NEXTAUTH_URL = `https://${process.env.VERCEL_URL}`;
+  } else {
+    delete process.env.NEXTAUTH_URL;
+  }
+}
+
 export const authOptions: NextAuthOptions = {
   session: {
     strategy: 'jwt',

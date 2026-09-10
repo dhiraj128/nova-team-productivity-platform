@@ -1,6 +1,14 @@
 import { withAuth } from 'next-auth/middleware';
 import { NextResponse } from 'next/server';
 
+if (!process.env.NEXTAUTH_URL || process.env.NEXTAUTH_URL.trim() === '') {
+  if (process.env.VERCEL_URL) {
+    process.env.NEXTAUTH_URL = `https://${process.env.VERCEL_URL}`;
+  } else {
+    delete process.env.NEXTAUTH_URL;
+  }
+}
+
 export default withAuth(
   function middleware(req) {
     return NextResponse.next();
