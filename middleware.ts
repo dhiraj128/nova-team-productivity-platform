@@ -18,11 +18,19 @@ export default withAuth(
 export const config = {
   matcher: [
     '/',
+    '/projects',
     '/projects/:path*',
+    '/tasks',
     '/tasks/:path*',
+    '/calendar',
     '/calendar/:path*',
+    '/reports',
     '/reports/:path*',
+    '/profile',
     '/profile/:path*',
+    '/settings',
     '/settings/:path*',
+    '/notifications',
+    '/notifications/:path*',
   ],
 };
