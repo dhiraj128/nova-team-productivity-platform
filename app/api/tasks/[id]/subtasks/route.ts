@@ -1,11 +1,10 @@
 import { NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/lib/auth';
+import { getAuthSession } from '@/lib/auth';
 import { db } from '@/lib/db';
 
 export async function POST(request: Request, { params }: { params: { id: string } }) {
   try {
-    const session = await getServerSession(authOptions);
+    const session = await getAuthSession();
     if (!session || !session.user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -29,9 +28,9 @@ export async function POST(request: Request, { params }: { params: { id: string 
   }
 }
 
-export async function PUT(request: Request, { params }: { params: { id: string } }) {
+async function handleSubtaskUpdate(request: Request, params: { id: string }) {
   try {
-    const session = await getServerSession(authOptions);
+    const session = await getAuthSession();
     if (!session || !session.user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -39,6 +38,11 @@ export async function PUT(request: Request, { params }: { params: { id: string }
     const body = await request.json();
     if (!body.subtaskId) {
       return NextResponse.json({ error: 'subtaskId is required' }, { status: 400 });
+    }
+
+    const subtask = await db.subtask.findUnique({ where: { id: body.subtaskId } });
+    if (!subtask || subtask.taskId !== params.id) {
+      return NextResponse.json({ error: 'Subtask not found for this task' }, { status: 404 });
     }
 
     const updated = await db.subtask.update({
@@ -53,4 +57,12 @@ export async function PUT(request: Request, { params }: { params: { id: string }
   } catch (error: any) {
     return NextResponse.json({ error: error.message || 'Failed to update subtask' }, { status: 400 });
   }
+}
+
+export async function PUT(request: Request, { params }: { params: { id: string } }) {
+  return handleSubtaskUpdate(request, params);
+}
+
+export async function PATCH(request: Request, { params }: { params: { id: string } }) {
+  return handleSubtaskUpdate(request, params);
 }

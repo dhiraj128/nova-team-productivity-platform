@@ -4,8 +4,8 @@
 ![Next.js 14](https://img.shields.io/badge/Next.js-14.2-black?style=for-the-badge&logo=next.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.6-blue?style=for-the-badge&logo=typescript)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8?style=for-the-badge&logo=tailwind-css)
-![Prisma](https://img.shields.io/badge/Prisma-5.21-2d3748?style=for-the-badge&logo=prisma)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Supported-4169e1?style=for-the-badge&logo=postgresql)
+![Prisma](https://img.shields.io/badge/Prisma-5.22-2d3748?style=for-the-badge&logo=prisma)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Production-4169e1?style=for-the-badge&logo=postgresql)
 
 > **Tagline:** Plan. Collaborate. Deliver.  
 > **Primary Candidate & Lead:** Dheeraj Kumar (`dheeraj@nova.app`)
@@ -167,11 +167,16 @@ pnpm exec prisma db push
 pnpm run db:seed
 ```
 
-### 5. Run Local Server
+### 5. Run Automated HTTP API & Integration Tests
 ```bash
-pnpm dev
-# App is available at http://localhost:3000
+pnpm test
 ```
+The test suite executes 34 automated assertions testing:
+- **Authentication Security:** bcrypt password verification and unauthenticated request rejection (`401 Unauthorized`).
+- **User Isolation:** Notification privacy enforcement (User A cannot view or update User B's notifications).
+- **HTTP API Kanban Drag-and-Drop:** Task status transitions (`TODO` -> `IN_PROGRESS` -> `REVIEW` -> `COMPLETED`) via API and database persistence.
+- **Project & Task CRUD:** Real HTTP request validation for project creation, task management, subtask toggles, comments, and global search.
+- **Progress Math:** Dynamic completion rate calculation and zero-division defense.
 
 ---
 

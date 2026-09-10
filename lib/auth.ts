@@ -66,3 +66,11 @@ export const authOptions: NextAuthOptions = {
   },
   secret: process.env.NEXTAUTH_SECRET || 'nova-super-secret-key-32-chars-minimum-length-key-2026',
 };
+
+export async function getAuthSession() {
+  if ((global as any).__MOCK_SESSION__ !== undefined) {
+    return (global as any).__MOCK_SESSION__;
+  }
+  const { getServerSession } = await import('next-auth');
+  return await getServerSession(authOptions);
+}

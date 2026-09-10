@@ -1,10 +1,14 @@
 import { NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/lib/auth';
+import { getAuthSession } from '@/lib/auth';
 import { db } from '@/lib/db';
 
 export async function GET(request: Request, { params }: { params: { id: string } }) {
   try {
+    const session = await getAuthSession();
+    if (!session || !session.user) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
     const task = await db.task.findUnique({
       where: { id: params.id },
       include: {
@@ -36,9 +40,9 @@ export async function GET(request: Request, { params }: { params: { id: string }
   }
 }
 
-export async function PUT(request: Request, { params }: { params: { id: string } }) {
+async function handleTaskUpdate(request: Request, params: { id: string }) {
   try {
-    const session = await getServerSession(authOptions);
+    const session = await getAuthSession();
     if (!session || !session.user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -114,9 +118,17 @@ export async function PUT(request: Request, { params }: { params: { id: string }
   }
 }
 
+export async function PUT(request: Request, { params }: { params: { id: string } }) {
+  return handleTaskUpdate(request, params);
+}
+
+export async function PATCH(request: Request, { params }: { params: { id: string } }) {
+  return handleTaskUpdate(request, params);
+}
+
 export async function DELETE(request: Request, { params }: { params: { id: string } }) {
   try {
-    const session = await getServerSession(authOptions);
+    const session = await getAuthSession();
     if (!session || !session.user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
