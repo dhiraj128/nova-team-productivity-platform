@@ -64,7 +64,7 @@ export const authOptions: NextAuthOptions = {
       return session;
     },
   },
-  secret: process.env.NEXTAUTH_SECRET || 'nova-super-secret-key-32-chars-minimum-length-key-2026',
+  secret: process.env.NEXTAUTH_SECRET || 'your-secure-random-32-character-secret-key-here',
 };
 
 export async function getAuthSession() {
