@@ -94,26 +94,31 @@ async function runBrowserE2ETests() {
 
     await page.waitForSelector('input[type="email"]');
     await page.evaluate((nameVal, emailVal, passVal) => {
-      const nameInp = document.querySelector('input[placeholder*="Dheeraj"]');
-      const emailInp = document.querySelector('input[type="email"]');
-      const passInp = document.querySelector('input[type="password"]');
-      if (nameInp) {
-        const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
-        setter.call(nameInp, nameVal);
-        nameInp.dispatchEvent(new Event('input', { bubbles: true }));
-        nameInp.dispatchEvent(new Event('change', { bubbles: true }));
-      }
-      if (emailInp) {
-        const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
-        setter.call(emailInp, emailVal);
-        emailInp.dispatchEvent(new Event('input', { bubbles: true }));
-        emailInp.dispatchEvent(new Event('change', { bubbles: true }));
-      }
-      if (passInp) {
-        const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
-        setter.call(passInp, passVal);
-        passInp.dispatchEvent(new Event('input', { bubbles: true }));
-        passInp.dispatchEvent(new Event('change', { bubbles: true }));
+      const form = document.querySelector('form');
+      if (form) {
+        const inputs = Array.from(form.querySelectorAll('input'));
+        const nameInp = inputs[0];
+        const emailInp = inputs[1];
+        const passInp = inputs[2];
+
+        if (nameInp) {
+          const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
+          setter.call(nameInp, nameVal);
+          nameInp.dispatchEvent(new Event('input', { bubbles: true }));
+          nameInp.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+        if (emailInp) {
+          const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
+          setter.call(emailInp, emailVal);
+          emailInp.dispatchEvent(new Event('input', { bubbles: true }));
+          emailInp.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+        if (passInp) {
+          const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
+          setter.call(passInp, passVal);
+          passInp.dispatchEvent(new Event('input', { bubbles: true }));
+          passInp.dispatchEvent(new Event('change', { bubbles: true }));
+        }
       }
     }, testName, createdUserEmail, testPassword);
 

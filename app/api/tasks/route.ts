@@ -9,7 +9,7 @@ export async function GET(request: Request) {
     if (!session || !session.user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
-    const { searchParams } = new URL(request.url);
+    const { searchParams } = new URL(request.url || '/', 'http://localhost');
     const projectId = searchParams.get('projectId');
     const assigneeId = searchParams.get('assigneeId');
     const status = searchParams.get('status');

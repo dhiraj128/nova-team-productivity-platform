@@ -12,6 +12,7 @@ export default withAuth(
     pages: {
       signIn: '/login',
     },
+    secret: process.env.NEXTAUTH_SECRET || 'your-secure-random-32-character-secret-key-here',
   }
 );
 

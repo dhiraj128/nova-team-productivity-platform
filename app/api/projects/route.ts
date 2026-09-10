@@ -11,7 +11,7 @@ export async function GET(request: Request) {
     }
     const userId = (session.user as any).id;
 
-    const { searchParams } = new URL(request.url);
+    const { searchParams } = new URL(request.url || '/', 'http://localhost');
     const status = searchParams.get('status');
     const search = searchParams.get('search');
     const sort = searchParams.get('sort') || 'updatedAt';
